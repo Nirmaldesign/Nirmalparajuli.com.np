@@ -1,9 +1,9 @@
 /* ===== GENERAL STYLES ===== */
 :root {
     --primary-red: #9B111E;
-    --cream-bg: #FDFBD4;
+    --cream-bg: #faf8dc;
     --dark-text: #2A2A2A;
-    --card-bg: #fff5bd;
+    --card-bg: #fcf4c7;
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -94,12 +94,18 @@ section {
     width: 100%;
     height: 100%;
     object-fit: contain;
+    transition: filter 0.3s ease;
 }
 
 #logo-container:hover {
     transform: scale(1.1);
 }
 
+@media (max-width: 768px) {
+    #logo-container img {
+        filter: brightness(0) invert(1); /* Changes the logo color to white */
+    }
+}
 .nav-container {
     display: flex;
     justify-content: center;
@@ -110,12 +116,13 @@ section {
     left: 50%;
     transform: translateX(-50%);
     z-index: 100;
-    background: var(--primary-red);
+    background: rgba(155, 17, 30, 0.7); /* Enhanced red glass effect */
     border-radius: 26px;
     padding: 10px;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(12px) saturate(200%);
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Reduced shadow depth */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border for glass effect */
 }
 
 nav {
@@ -128,9 +135,9 @@ nav {
 
 nav a {
     text-decoration: none;
-    color: var(--cream-bg);
+    color: var(--cream-bg); /* Text color matches the cream background */
     padding: 8px 15px;
-    font-weight: 500;
+    font-weight: 600;
     border-radius: 26px;
     transition: all 0.3s;
     font-size: clamp(12px, 2vw, 16px);
@@ -138,16 +145,16 @@ nav a {
 }
 
 nav a:hover {
-    background: var(--cream-bg);
-    color: var(--primary-red);
+    background: rgba(255, 255, 255, 0.3); /* Slightly lighter hover effect */
+    color: #7a0d187d; /* Darker red for hover state */
     transform: translateY(-2px);
 }
 
 nav a.active {
-    background: var(--cream-bg);
-    color: #010101;
+    background: rgba(255, 255, 255, 0.4); /* Active state with more opacity */
+    color: #010101; /* Black text for active state */
     transform: scale(1.1);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .menu-toggle {
@@ -211,7 +218,7 @@ nav a.active {
 
 .btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
 .view-designs:hover {
@@ -258,15 +265,15 @@ nav a.active {
 }
 
 .image-box {
-    width: clamp(240px, 40vw, 320px);
-    height: clamp(135px, 22.5vw, 180px);
-    margin: 0 10px;
+    width: clamp(200px, 35vw, 280px); /* Reduced size for small devices */
+    height: clamp(112px, 20vw, 160px); /* Adjusted height */
+    margin: 0 8px;
 }
 
 .poster-box {
-    width: clamp(160px, 25vw, 228px);
-    height: clamp(200px, 35vw, 273px);
-    margin: 0 8px;
+    width: clamp(140px, 22vw, 200px); /* Reduced size for small devices */
+    height: clamp(180px, 30vw, 240px); /* Adjusted height */
+    margin: 0 6px;
 }
 
 .image-box img, .poster-box img {
@@ -296,6 +303,18 @@ nav a.active {
     100% { transform: translateX(0); }
 }
 
+@media (max-width: 768px) {
+    .image-box {
+        width: clamp(160px, 30vw, 220px); /* Further reduced for smaller screens */
+        height: clamp(90px, 18vw, 130px); /* Adjusted height */
+    }
+
+    .poster-box {
+        width: clamp(120px, 20vw, 180px); /* Further reduced for smaller screens */
+        height: clamp(160px, 28vw, 200px); /* Adjusted height */
+    }
+}
+
 /* ===== DESIGN GRID ===== */
 #designs .grid {
     display: grid;
@@ -306,7 +325,16 @@ nav a.active {
     padding: 0 15px;
     width: 100%;
 }
-
+#designs h13 {
+    background: var(--primary-red);
+    color: var(--cream-bg);
+    border-radius: 19px;
+    padding: 8px 18px;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 20px;
+    font-size: clamp(16px, 2.5vw, 18px);
+}
 #designs .design-box {
     position: relative;
     transition: transform 0.3s ease;
