@@ -239,6 +239,27 @@ nav a.active {
     will-change: transform;
 }
 
+.scrolling-container::before,
+.scrolling-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 20px; /* Adjust width as needed */
+    pointer-events: none;
+    z-index: 1;
+}
+
+.scrolling-container::before {
+    left: 0;
+    background: linear-gradient(to right, var(--cream-bg), rgba(250, 248, 220, 0));
+}
+
+.scrolling-container::after {
+    right: 0;
+    background: linear-gradient(to left, var(--cream-bg), rgba(250, 248, 220, 0));
+}
+
 .scrolling-track {
     display: flex;
     width: max-content;
