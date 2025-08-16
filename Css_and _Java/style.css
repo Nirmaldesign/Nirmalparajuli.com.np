@@ -121,7 +121,6 @@ section {
     padding: 10px;
     backdrop-filter: blur(12px) saturate(200%);
     transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Reduced shadow depth */
     border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border for glass effect */
 }
 
@@ -145,16 +144,15 @@ nav a {
 }
 
 nav a:hover {
-    background: rgba(255, 255, 255, 0.3); /* Slightly lighter hover effect */
-    color: #7a0d187d; /* Darker red for hover state */
-    transform: translateY(-2px);
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.2)); /* Slightly brighter hover effect */
+    color: var(--cream-bg); /* Keep text color consistent */
+    transform: translateY(-2px) scale(1.05); /* Slight hover lift */
 }
 
 nav a.active {
-    background: rgba(255, 255, 255, 0.4); /* Active state with more opacity */
-    color: #010101; /* Black text for active state */
+    color: var(--cream-bg); /* Keep text color consistent */
     transform: scale(1.1);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.3), inset -3px -3px 6px rgba(255, 255, 255, 0.2); /* Enhanced inner shadow for active state */
 }
 
 .menu-toggle {
