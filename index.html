@@ -18,8 +18,24 @@
 
     <!-- Logo Container -->
     <a href="#home" id="logo-container">
-        <img src="Logos/Nirmal_Logo.png" alt="Nirmal Creation Logo">
+      <img src="Logos/Nirmal_Logo.png" alt="Nirmal Creation Logo" class="desktop-logo">
+      <img src="Logos/Nirmal_Logo_Mobile.png" alt="Nirmal Creation Mobile Logo" class="mobile-logo">
     </a>
+
+    <style>
+      .mobile-logo {
+        display: none;
+      }
+
+      @media (max-width: 768px) {
+        .desktop-logo {
+          display: none;
+        }
+        .mobile-logo {
+          display: block;
+        }
+      }
+    </style>
 
     <!-- Navigation Bar -->
     <div class="nav-container">

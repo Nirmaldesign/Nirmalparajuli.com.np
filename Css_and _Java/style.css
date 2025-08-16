@@ -101,11 +101,6 @@ section {
     transform: scale(1.1);
 }
 
-@media (max-width: 768px) {
-    #logo-container img {
-        filter: brightness(0) invert(1); /* Changes the logo color to white */
-    }
-}
 .nav-container {
     display: flex;
     justify-content: center;
