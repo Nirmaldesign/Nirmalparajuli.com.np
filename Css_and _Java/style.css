@@ -245,12 +245,14 @@ nav a.active {
 
 .scrolling-container::before {
     left: 0;
-    background: linear-gradient(to right, var(--cream-bg), rgba(250, 248, 220, 0));
+    width: 6px; /* Further reduced size for a softer edge */
+    background: linear-gradient(to right, var(--cream-bg), rgba(250, 248, 220, 0.2)); /* Softer gradient */
 }
 
 .scrolling-container::after {
     right: 0;
-    background: linear-gradient(to left, var(--cream-bg), rgba(250, 248, 220, 0));
+    width:6px; /* Further reduced size for a softer edge */
+    background: linear-gradient(to left, var(--cream-bg), rgba(250, 248, 220, 0.2)); /* Softer gradient */
 }
 
 .scrolling-track {
